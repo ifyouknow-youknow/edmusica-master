@@ -1,10 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:iic_app_template_flutter/MODELS/DATAMASTER/datamaster.dart';
-import 'package:iic_app_template_flutter/MODELS/firebase.dart';
-import 'package:iic_app_template_flutter/VIEWS/playground.dart';
-import 'package:iic_app_template_flutter/firebase_options.dart';
+import 'package:edm_master/MODELS/DATAMASTER/datamaster.dart';
+import 'package:edm_master/MODELS/firebase.dart';
+import 'package:edm_master/VIEWS/dashboard.dart';
+import 'package:edm_master/VIEWS/playground.dart';
+import 'package:edm_master/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +16,7 @@ void main() async {
 
   runApp(
     MaterialApp(
-      home: PlaygroundView(dm: DataMaster()),
+      home: Dashboard(dm: DataMaster()),
     ),
     // initialRoute: "/",
     // routes: {

@@ -1,11 +1,11 @@
-import 'package:iic_app_template_flutter/MODELS/screen.dart';
+import 'package:edm_master/MODELS/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:iic_app_template_flutter/COMPONENTS/button_view.dart';
-import 'package:iic_app_template_flutter/COMPONENTS/padding_view.dart';
-import 'package:iic_app_template_flutter/COMPONENTS/text_view.dart';
-import 'package:iic_app_template_flutter/FUNCTIONS/colors.dart';
-import 'package:iic_app_template_flutter/FUNCTIONS/date.dart';
+import 'package:edm_master/COMPONENTS/button_view.dart';
+import 'package:edm_master/COMPONENTS/padding_view.dart';
+import 'package:edm_master/COMPONENTS/text_view.dart';
+import 'package:edm_master/FUNCTIONS/colors.dart';
+import 'package:edm_master/FUNCTIONS/date.dart';
 
 class CalendarView extends StatefulWidget {
   final Color backgroundColor;

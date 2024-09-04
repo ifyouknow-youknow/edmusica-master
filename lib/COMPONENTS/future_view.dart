@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iic_app_template_flutter/COMPONENTS/loading_view.dart';
-import 'package:iic_app_template_flutter/COMPONENTS/text_view.dart';
+import 'package:edm_master/COMPONENTS/loading_view.dart';
+import 'package:edm_master/COMPONENTS/text_view.dart';
 
 class FutureView extends StatefulWidget {
   final Future<dynamic> future;

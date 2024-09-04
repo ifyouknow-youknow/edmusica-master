@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:iic_app_template_flutter/MODELS/constants.dart';
-import 'package:iic_app_template_flutter/MODELS/firebase.dart';
+import 'package:edm_master/MODELS/constants.dart';
+import 'package:edm_master/MODELS/firebase.dart';
 
 part 'toggles.dart';
 part 'strings.dart';

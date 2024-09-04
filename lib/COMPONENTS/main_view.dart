@@ -1,9 +1,10 @@
+import 'package:edm_master/MODELS/screen.dart';
 import 'package:flutter/material.dart';
-import 'package:iic_app_template_flutter/COMPONENTS/alert_view.dart';
-import 'package:iic_app_template_flutter/COMPONENTS/button_view.dart';
-import 'package:iic_app_template_flutter/COMPONENTS/loading_view.dart';
-import 'package:iic_app_template_flutter/COMPONENTS/text_view.dart';
-import 'package:iic_app_template_flutter/MODELS/DATAMASTER/datamaster.dart';
+import 'package:edm_master/COMPONENTS/alert_view.dart';
+import 'package:edm_master/COMPONENTS/button_view.dart';
+import 'package:edm_master/COMPONENTS/loading_view.dart';
+import 'package:edm_master/COMPONENTS/text_view.dart';
+import 'package:edm_master/MODELS/DATAMASTER/datamaster.dart';
 
 class MainView extends StatefulWidget {
   final DataMaster dm;
@@ -31,7 +32,7 @@ class _MainViewState extends State<MainView> {
           Column(
             children: [
               const SizedBox(
-                height: 46,
+                height: 20,
               ),
               ...widget.children,
             ],

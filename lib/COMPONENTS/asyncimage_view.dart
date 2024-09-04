@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iic_app_template_flutter/MODELS/firebase.dart'; // Adjust the import path as needed
+import 'package:edm_master/MODELS/firebase.dart'; // Adjust the import path as needed
 
 class AsyncImageView extends StatefulWidget {
   const AsyncImageView({

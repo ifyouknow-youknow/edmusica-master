@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iic_app_template_flutter/COMPONENTS/text_view.dart';
-import 'package:iic_app_template_flutter/FUNCTIONS/colors.dart';
+import 'package:edm_master/COMPONENTS/text_view.dart';
+import 'package:edm_master/FUNCTIONS/colors.dart';
 
 class SegmentedView extends StatefulWidget {
   final List<String> options;
