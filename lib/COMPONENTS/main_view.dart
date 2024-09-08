@@ -1,4 +1,3 @@
-import 'package:edm_master/MODELS/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:edm_master/COMPONENTS/alert_view.dart';
 import 'package:edm_master/COMPONENTS/button_view.dart';
@@ -32,7 +31,7 @@ class _MainViewState extends State<MainView> {
           Column(
             children: [
               const SizedBox(
-                height: 20,
+                height: 46,
               ),
               ...widget.children,
             ],
@@ -58,6 +57,7 @@ class _MainViewState extends State<MainView> {
                 ...widget.dm.alertButtons
               ],
             ),
+
           if (widget.dm.toggleLoading) const LoadingView()
         ],
       ),
