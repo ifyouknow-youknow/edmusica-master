@@ -5,6 +5,7 @@ import 'package:edm_master/FUNCTIONS/colors.dart';
 import 'package:edm_master/FUNCTIONS/nav.dart';
 import 'package:edm_master/VIEWS/calendar.dart';
 import 'package:edm_master/VIEWS/dashboard.dart';
+import 'package:edm_master/VIEWS/requests.dart';
 import 'package:flutter/material.dart';
 import 'package:edm_master/COMPONENTS/image_view.dart';
 import 'package:edm_master/COMPONENTS/main_view.dart';
@@ -22,7 +23,7 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return MainView(
-        backgroundColor: const Color.fromARGB(255, 212, 219, 240),
+        backgroundColor: hexToColor("#E9F1FA"),
         dm: widget.dm,
         children: [
           // TOP
@@ -81,7 +82,7 @@ class _NavigationState extends State<Navigation> {
                       paddingLeft: 15,
                       paddingRight: 15,
                       radius: 10,
-                      backgroundColor: hexToColor("#253677"),
+                      backgroundColor: hexToColor("#1871EB"),
                       onPress: () {
                         nav_PushAndRemove(context, Dashboard(dm: widget.dm));
                       },
@@ -93,9 +94,10 @@ class _NavigationState extends State<Navigation> {
                             children: [
                               TextView(
                                 text: 'DASHBOARD',
-                                size: 24,
+                                size: 22,
                                 weight: FontWeight.w600,
                                 color: Colors.white,
+                                wrap: true,
                               ),
                               Icon(
                                 Icons.dashboard,
@@ -118,22 +120,57 @@ class _NavigationState extends State<Navigation> {
                       onPress: () {
                         nav_PushAndRemove(context, Calendar(dm: widget.dm));
                       },
-                      child: const Column(
+                      child: Column(
                         children: [
-                          Spacer(),
+                          const Spacer(),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               TextView(
                                 text: 'CALENDAR',
-                                size: 24,
+                                size: 22,
                                 weight: FontWeight.w600,
-                                color: Colors.black,
+                                color: hexToColor("#3490F3"),
+                                wrap: true,
                               ),
                               Icon(
                                 Icons.calendar_month,
                                 size: 36,
-                                color: Colors.black,
+                                color: hexToColor("#3490F3"),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    // REQUESTS
+                    ButtonView(
+                      paddingBottom: 15,
+                      paddingTop: 15,
+                      paddingLeft: 15,
+                      paddingRight: 15,
+                      radius: 10,
+                      backgroundColor: Colors.white,
+                      onPress: () {
+                        nav_PushAndRemove(context, Requests(dm: widget.dm));
+                      },
+                      child: Column(
+                        children: [
+                          const Spacer(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              TextView(
+                                text: 'REQUESTS',
+                                size: 22,
+                                weight: FontWeight.w600,
+                                color: hexToColor("#3490F3"),
+                                wrap: true,
+                              ),
+                              Icon(
+                                Icons.contact_support,
+                                size: 36,
+                                color: hexToColor("#3490F3"),
                               )
                             ],
                           ),

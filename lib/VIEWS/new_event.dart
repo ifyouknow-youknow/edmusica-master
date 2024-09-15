@@ -70,8 +70,7 @@ class _NewEventState extends State<NewEvent> {
 
 //
   void init() async {
-    final districts =
-        await firebase_GetAllDocuments('EdmusicaTeachers_Districts');
+    final districts = await firebase_GetAllDocuments('Edmusica_Districts');
     if (districts.isNotEmpty) {
       setState(() {
         _selectedDistrict = districts.first;

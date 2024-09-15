@@ -60,6 +60,40 @@ class _CalendarState extends State<Calendar> {
     return allEvents;
   }
 
+  void onRemoveEvent(String eventId) async {
+    setState(() {
+      widget.dm.setToggleAlert(true);
+      widget.dm.setAlertTitle('Remove Event');
+      widget.dm.setAlertText('Are you sure you want to remove this event?');
+      widget.dm.setAlertButtons([
+        PaddingView(
+          paddingTop: 0,
+          paddingBottom: 0,
+          child: ButtonView(
+              child: const TextView(
+                text: 'Remove',
+                color: Colors.red,
+                weight: FontWeight.w500,
+                size: 18,
+              ),
+              onPress: () async {
+                setState(() {
+                  widget.dm.setToggleAlert(false);
+                  widget.dm.setToggleLoading(true);
+                });
+                final success =
+                    await firebase_DeleteDocument('${appName}_Events', eventId);
+                if (success) {
+                  setState(() {
+                    widget.dm.setToggleLoading(false);
+                  });
+                }
+              }),
+        )
+      ]);
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -88,6 +122,7 @@ class _CalendarState extends State<Calendar> {
           ],
         ),
       ),
+
       // MAIN
       Expanded(
         child: Row(
@@ -98,7 +133,6 @@ class _CalendarState extends State<Calendar> {
             Flexible(
               child: SingleChildScrollView(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // TOP
@@ -188,16 +222,39 @@ class _CalendarState extends State<Calendar> {
                                                 size: 20,
                                                 weight: FontWeight.w600,
                                               ),
-                                              TextView(
-                                                text: eve['details']
-                                                    .replaceAll("jjj", "\n"),
-                                                size: 16,
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                children: [
+                                                  TextView(
+                                                    text: eve['details']
+                                                        .replaceAll(
+                                                            "jjj", "\n"),
+                                                    size: 16,
+                                                  ),
+                                                  ButtonView(
+                                                      child: const TextView(
+                                                        text: 'remove',
+                                                        color: Colors.red,
+                                                        weight: FontWeight.w600,
+                                                      ),
+                                                      onPress: () {
+                                                        onRemoveEvent(
+                                                            eve['id']);
+                                                      })
+                                                ],
                                               )
                                             ],
                                           ),
                                         ),
                                       ),
                                     ),
+                                    const SizedBox(
+                                      height: 10,
+                                    )
                                   ],
                                 )
                             ],
